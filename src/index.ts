@@ -20,6 +20,7 @@ import { copyPasteContextMenuModule, glspServerCopyPasteModule } from "./feature
 import glspDecorationModule from "./features/decoration/di.config";
 import glspEditLabelModule from "./features/edit-label/di.config";
 import executeCommandModule from "./features/execute/di.config";
+import glspDebugModule from "./features/glsp-debug/di.config";
 import modelHintsModule from "./features/hints/di.config";
 import glspHoverModule from "./features/hover/di.config";
 import layoutCommandsModule from "./features/layout/di.config";
@@ -100,8 +101,15 @@ export * from './utils/smodel-util';
 export * from './utils/viewpoint-util';
 export * from './model-source/websocket-diagram-server';
 export * from './model-source/glsp-server-status';
+
+export * from "./features/glsp-debug/model";
+export * from "./features/glsp-debug/set-stack-frame";
+export * from "./features/glsp-debug/add-breakpoint";
+export * from "./features/glsp-debug/enable-breakpoint";
+export * from './features/glsp-debug/add-breakpoint-context-menu';
+
 export {
     validationModule, saveModule, executeCommandModule, paletteModule, toolFeedbackModule, defaultGLSPModule, modelHintsModule, glspCommandPaletteModule, //
     glspContextMenuModule, glspServerCopyPasteModule, copyPasteContextMenuModule, glspSelectModule, glspMouseToolModule, layoutCommandsModule, glspEditLabelModule, //
-    glspHoverModule, toolsModule, navigationModule, markerNavigatorModule, glspDecorationModule
+    glspHoverModule, toolsModule, navigationModule, markerNavigatorModule, glspDecorationModule, glspDebugModule
 };

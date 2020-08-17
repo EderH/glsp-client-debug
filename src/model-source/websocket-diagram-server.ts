@@ -40,6 +40,7 @@ import { SourceUriAware } from "../base/source-uri-aware";
 import { RequestNavigationTargetsAction } from "../features/navigation/navigation-action-handler";
 import { ResolveNavigationTargetAction } from "../features/navigation/navigation-target-resolver";
 import { SetEditModeAction, isSetEditModeAction } from "../base/actions/edit-mode-action";
+import { AddBreakpointAction, RemoveBreakpointAction } from "../features/glsp-debug/add-breakpoint";
 
 const receivedFromServerProperty = '__receivedFromServer';
 @injectable()
@@ -128,6 +129,8 @@ export function registerDefaultGLSPServerActions(registry: ActionHandlerRegistry
     registry.register(ResolveNavigationTargetAction.KIND, diagramServer);
     registry.register(CompoundOperation.KIND, diagramServer);
     registry.register(SetEditModeAction.KIND, diagramServer);
+    registry.register(AddBreakpointAction.KIND, diagramServer);
+    registry.register(RemoveBreakpointAction.KIND, diagramServer);
 
     // Register an empty handler for SwitchEditMode, to avoid runtime exceptions.
     // We don't want to support SwitchEditMode, but sprotty still sends some corresponding
